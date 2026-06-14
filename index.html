@@ -875,14 +875,16 @@
     .letter-card {
       position: relative;
       width: 100%;
-      min-height: 520px;
+      min-height: 560px;
       border-radius: 34px;
-      padding: 32px 24px;
+      padding: 38px 26px 28px;
       display: grid;
       place-items: center;
       background:
-        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,241,.72));
-      box-shadow: 0 30px 85px rgba(126,55,76,.25);
+        linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,247,241,.78));
+      box-shadow:
+        0 30px 85px rgba(126,55,76,.25),
+        inset 0 0 0 1px rgba(255,255,255,.75);
       border: 1px solid rgba(255,255,255,.82);
       overflow: hidden;
       transform-style: preserve-3d;
@@ -910,10 +912,10 @@
 
     .envelope {
       position: relative;
-      width: min(315px, 78vw);
-      height: 210px;
-      margin: 18px auto 26px;
-      filter: drop-shadow(0 18px 22px rgba(126,55,76,.18));
+      width: min(340px, 82vw);
+      height: 238px;
+      margin: 22px auto 26px;
+      filter: drop-shadow(0 22px 28px rgba(126,55,76,.20));
       animation: envelopeFloat 2.6s ease-in-out infinite;
     }
 
@@ -926,9 +928,13 @@
       position: absolute;
       inset: 0;
       border-radius: 18px;
-      background: linear-gradient(145deg, #fff7f1, #ffd2c4);
+      background:
+        linear-gradient(145deg, #fff9f4 0%, #ffe2d7 48%, #ffd2c4 100%);
       border: 2px solid rgba(213,168,78,.42);
       overflow: hidden;
+      box-shadow:
+        inset 0 -8px 18px rgba(0,0,0,.05),
+        inset 0 8px 10px rgba(255,255,255,.5);
     }
 
     .env-back::before {
@@ -936,8 +942,21 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(32deg, transparent 49%, rgba(213,168,78,.45) 50%, transparent 51%),
-        linear-gradient(-32deg, transparent 49%, rgba(213,168,78,.45) 50%, transparent 51%);
+        linear-gradient(32deg, transparent 49%, rgba(213,168,78,.42) 50%, transparent 51%),
+        linear-gradient(-32deg, transparent 49%, rgba(213,168,78,.42) 50%, transparent 51%);
+      opacity: .9;
+    }
+
+    .env-back::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 10px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.06);
+      filter: blur(8px);
     }
 
     .env-flap {
@@ -945,57 +964,149 @@
       left: 0;
       top: 0;
       width: 100%;
-      height: 118px;
+      height: 132px;
       transform-origin: top center;
       clip-path: polygon(0 0, 100% 0, 50% 100%);
-      background: linear-gradient(180deg, #ffb3c6, #ff8fab);
+      background: linear-gradient(180deg, #ffbfd0, #ff8fab);
       border-top-left-radius: 18px;
       border-top-right-radius: 18px;
-      transition: transform .85s ease;
-      z-index: 3;
+      transition: transform .95s ease;
+      z-index: 5;
+      box-shadow: inset 0 -8px 16px rgba(0,0,0,.08);
     }
 
     .intro-screen.opening .env-flap {
       transform: rotateX(168deg);
     }
 
+
+    .letter-bow {
+      position: absolute;
+      top: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 128px;
+      z-index: 8;
+      filter: drop-shadow(0 18px 24px rgba(126,55,76,.22));
+      pointer-events: none;
+    }
+
+    .letter-bow::before,
+    .letter-bow::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      width: 96px;
+      height: 66px;
+      background: linear-gradient(135deg, #ffc2d1, #ff8fab 55%, #ff6f61);
+      border-radius: 72% 24% 72% 24%;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.42),
+        inset -10px -10px 18px rgba(255,255,255,.18);
+    }
+
+    .letter-bow::before {
+      left: 6px;
+      transform: rotate(-12deg);
+    }
+
+    .letter-bow::after {
+      right: 6px;
+      transform: scaleX(-1) rotate(-12deg);
+    }
+
+    .letter-bow-center {
+      position: absolute;
+      left: 50%;
+      top: 34px;
+      width: 42px;
+      height: 42px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff8df 0 34%, #f0c66e 35% 63%, #d5a84e 64% 100%);
+      box-shadow:
+        inset 0 0 0 5px rgba(255,255,255,.38),
+        0 5px 10px rgba(0,0,0,.08);
+      z-index: 3;
+    }
+
+    .letter-bow-tail-left,
+    .letter-bow-tail-right {
+      position: absolute;
+      top: 56px;
+      width: 36px;
+      height: 92px;
+      background: linear-gradient(180deg, #ffc2d1, #ff8fab 55%, #ff6f61);
+      clip-path: polygon(0 0, 100% 0, 84% 100%, 50% 82%, 18% 100%);
+      opacity: .98;
+      z-index: 2;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.22);
+    }
+
+    .letter-bow-tail-left {
+      left: 60px;
+      transform: rotate(12deg);
+    }
+
+    .letter-bow-tail-right {
+      right: 60px;
+      transform: rotate(-12deg);
+    }
+
     .seal {
       position: absolute;
       left: 50%;
-      top: 80px;
+      top: 94px;
       transform: translateX(-50%);
-      width: 62px;
-      height: 62px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       background: radial-gradient(circle, #fff8df 0 35%, #f0c66e 36% 64%, #d5a84e 65% 100%);
       color: #d45d7a;
       font-size: 1.55rem;
-      z-index: 5;
+      z-index: 6;
       box-shadow: 0 8px 18px rgba(126,55,76,.2), inset 0 0 0 5px rgba(255,255,255,.38);
     }
 
     .env-letter {
       position: absolute;
       left: 50%;
-      bottom: 25px;
-      width: 82%;
-      height: 150px;
+      bottom: 18px;
+      width: 84%;
+      height: 172px;
       transform: translateX(-50%);
       border-radius: 18px;
-      background: rgba(255,255,255,.92);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,250,245,.95));
       border: 1px solid rgba(213,168,78,.4);
-      box-shadow: 0 12px 25px rgba(126,55,76,.12);
-      z-index: 2;
-      transition: transform .85s ease;
-      padding-top: 20px;
+      box-shadow:
+        0 14px 28px rgba(126,55,76,.12),
+        inset 0 0 0 1px rgba(255,255,255,.65);
+      z-index: 3;
+      transition: transform .95s ease;
+      padding-top: 28px;
       color: var(--muted);
       font-weight: 900;
+      overflow: hidden;
+    }
+
+    .env-letter::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      border-radius: 12px;
+      border: 1px dashed rgba(213,168,78,.32);
+      pointer-events: none;
     }
 
     .intro-screen.opening .env-letter {
-      transform: translateX(-50%) translateY(-82px);
+      transform: translateX(-50%) translateY(-100px);
     }
 
     .intro-title {
@@ -1099,7 +1210,31 @@
       }
 
       .envelope {
-        height: 190px;
+        width: min(320px, 84vw);
+        height: 210px;
+      }
+
+      .letter-bow {
+        width: 178px;
+        height: 108px;
+        top: 42px;
+      }
+
+      .letter-bow::before,
+      .letter-bow::after {
+        width: 78px;
+        height: 56px;
+      }
+
+      .letter-bow-center {
+        width: 36px;
+        height: 36px;
+      }
+
+      .letter-bow-tail-left,
+      .letter-bow-tail-right {
+        height: 80px;
+        top: 50px;
       }
     }
 
@@ -1114,8 +1249,17 @@
         <div class="intro-name">Yanina Beatriz</div>
 
         <div class="envelope" aria-hidden="true">
+          <div class="letter-bow">
+            <div class="letter-bow-center"></div>
+            <div class="letter-bow-tail-left"></div>
+            <div class="letter-bow-tail-right"></div>
+          </div>
           <div class="env-back"></div>
-          <div class="env-letter">Una invitación especial 💌</div>
+          <div class="env-letter">
+            <div style="font-family: Georgia, serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 8px;">Invitación especial</div>
+            <div style="font-family: 'Brush Script MT', 'Segoe Script', cursive; color: #d45d7a; font-size: 1.8rem; line-height: .95;">Yanina Beatriz</div>
+            <div style="margin-top: 10px; font-size: .9rem;">Tocá para abrir ✨</div>
+          </div>
           <div class="env-flap"></div>
           <div class="seal">♥</div>
         </div>
@@ -1125,7 +1269,7 @@
         </p>
 
         <button class="tap-button" id="openInvitation" type="button">Tocar</button>
-        
+        <div class="intro-note">La música empieza al abrir la carta 🎵</div>
       </div>
     </div>
   </div>
@@ -1337,7 +1481,9 @@
               Preparando el envío de tu confirmación...
             </div>
 
-            
+            <p class="note">
+              La primera vez puede pedir confirmar el correo del organizador en FormSubmit.
+            </p>
           </form>
         </article>
       </section>
@@ -1510,3 +1656,4 @@
   </script>
 </body>
 </html>
+
