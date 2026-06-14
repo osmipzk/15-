@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XV Años | Yanina Beatriz</title>
+  <meta name="description" content="Invitación dinámica a los XV años de Yanina Beatriz Barrios Medina" />
+
+  <style>
+    :root {
+      --cream: #fffaf7;
+      --paper: rgba(255, 255, 255, 0.72);
+      --paper-strong: rgba(255, 255, 255, 0.9);
+      --pink: #ff8fab;
+      --pink-2: #ffb3c6;
+      --peach: #ffc8a2;
+      --coral: #ff6f61;
+      --lilac: #cdb4db;
+      --gold: #d5a84e;
+      --gold-light: #ffe7a6;
+      --text: #56333b;
+      --muted: #8c5a65;
+      --shadow: rgba(126, 55, 76, 0.22);
+      --success: #5a9c72;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.95), transparent 12%),
+        radial-gradient(circle at 80% 12%, rgba(255, 244, 204, 0.8), transparent 16%),
+        radial-gradient(circle at 20% 85%, rgba(205, 180, 219, 0.55), transparent 18%),
+        linear-gradient(135deg, #fff0f5 0%, #ffd6c9 35%, #ffc4d6 68%, #f6d7ff 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.8) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(255,255,255,0.55) 0 1px, transparent 2px);
+      background-size: 44px 44px, 76px 76px;
+      animation: bgMove 18s linear infinite;
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    @keyframes bgMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(-80px); }
+    }
+
+    .floating {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .floating span {
+      position: absolute;
+      bottom: -60px;
+      font-size: 20px;
+      opacity: 0.75;
+      animation: rise 9s linear infinite;
+      filter: drop-shadow(0 8px 10px rgba(126, 55, 76, 0.15));
+    }
+
+    .floating span:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 24px; }
+    .floating span:nth-child(2) { left: 17%; animation-delay: 2s; }
+    .floating span:nth-child(3) { left: 30%; animation-delay: 4s; font-size: 17px; }
+    .floating span:nth-child(4) { left: 45%; animation-delay: 1.2s; }
+    .floating span:nth-child(5) { left: 62%; animation-delay: 3.4s; font-size: 26px; }
+    .floating span:nth-child(6) { left: 78%; animation-delay: 5.2s; }
+    .floating span:nth-child(7) { left: 90%; animation-delay: 2.8s; font-size: 19px; }
+
+    @keyframes rise {
+      0% { transform: translateY(0) rotate(0deg) scale(.8); opacity: 0; }
+      15% { opacity: .85; }
+      100% { transform: translateY(-115vh) rotate(30deg) scale(1.2); opacity: 0; }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1020px, 94vw);
+      margin: 24px auto;
+      padding: 14px 0 34px;
+    }
+
+    .invitation {
+      position: relative;
+      overflow: hidden;
+      border-radius: 38px;
+      padding: clamp(20px, 4vw, 52px);
+      background: linear-gradient(145deg, rgba(255,255,255,.72), rgba(255,250,247,.48));
+      box-shadow:
+        0 30px 90px var(--shadow),
+        inset 0 0 0 1px rgba(255,255,255,0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+    }
+
+    .invitation::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 28px;
+      border: 1px dashed rgba(213, 168, 78, .65);
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(1px);
+      opacity: .72;
+      z-index: -1;
+    }
+
+    .blob.one {
+      width: 280px;
+      height: 280px;
+      background: rgba(255, 143, 171, .35);
+      top: -110px;
+      right: -80px;
+    }
+
+    .blob.two {
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 200, 162, .45);
+      bottom: -110px;
+      left: -80px;
+    }
+
+    .blob.three {
+      width: 160px;
+      height: 160px;
+      background: rgba(205, 180, 219, .42);
+      top: 38%;
+      left: -60px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: clamp(22px, 4vw, 44px);
+      align-items: center;
+      min-height: 520px;
+    }
+
+    .tag {
+      width: fit-content;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(213,168,78,0.45);
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: .04em;
+      box-shadow: 0 12px 28px rgba(126, 55, 76, .08);
+    }
+
+    .tag span {
+      color: var(--gold);
+    }
+
+    .title {
+      margin-top: 22px;
+      font-family: "Georgia", "Times New Roman", serif;
+      line-height: .86;
+    }
+
+    .title small {
+      display: block;
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      margin-bottom: 12px;
+    }
+
+    .title strong {
+      display: block;
+      font-size: clamp(4.6rem, 13vw, 9rem);
+      color: var(--gold);
+      text-shadow:
+        0 5px 0 rgba(255,255,255,.65),
+        0 16px 30px rgba(126, 55, 76, .14);
+    }
+
+    .name {
+      margin: 20px 0 16px;
+      font-family: "Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive;
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      line-height: .84;
+      color: #d45d7a;
+      text-shadow: 0 8px 22px rgba(126, 55, 76, .13);
+    }
+
+    .intro {
+      font-size: clamp(1.05rem, 2vw, 1.32rem);
+      line-height: 1.55;
+      max-width: 560px;
+      color: var(--text);
+    }
+
+    .date-pill {
+      margin-top: 22px;
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,239,230,.76));
+      border: 1px solid rgba(213,168,78,.45);
+      box-shadow: 0 14px 28px rgba(126, 55, 76, .1);
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .date-pill .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--pink), var(--coral));
+      color: white;
+      font-size: 1.35rem;
+      box-shadow: 0 10px 18px rgba(255, 111, 97, .25);
+    }
+
+    .visual-card {
+      position: relative;
+      min-height: 520px;
+      border-radius: 32px;
+      padding: 24px;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.6), rgba(255, 239, 230, .48));
+      border: 1px solid rgba(255,255,255,.86);
+      box-shadow: inset 0 0 0 1px rgba(213,168,78,.16);
+      overflow: hidden;
+    }
+
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, #ff8fab, #ffc8a2, #ffe7a6, #cdb4db, #ff8fab);
+      opacity: .9;
+      animation: spin 12s linear infinite;
+    }
+
+    .visual-card::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(255,250,247,.92);
+      box-shadow: inset 0 0 0 1px rgba(213,168,78,.35);
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .portrait-symbol {
+      position: relative;
+      z-index: 1;
+      width: min(270px, 70vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      color: var(--gold);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,1), rgba(255,244,235,.92));
+      box-shadow:
+        0 25px 60px rgba(126,55,76,.18),
+        inset 0 0 0 1px rgba(213,168,78,.45);
+    }
+
+    .portrait-symbol .crown {
+      position: absolute;
+      top: 30px;
+      font-size: 2.3rem;
+      animation: bounce 2.2s ease-in-out infinite;
+    }
+
+    .portrait-symbol .big {
+      font-family: Georgia, serif;
+      font-size: clamp(5rem, 14vw, 8rem);
+      line-height: 1;
+      color: var(--pink);
+      text-shadow: 0 6px 0 rgba(255,255,255,.65);
+    }
+
+    .portrait-symbol .label {
+      font-weight: 900;
+      letter-spacing: .18em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .mini-bow {
+      position: absolute;
+      z-index: 2;
+      width: 92px;
+      height: 48px;
+      display: block;
+    }
+
+    .mini-bow::before,
+    .mini-bow::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 43px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--pink-2), var(--coral));
+      border-radius: 70% 20% 70% 20%;
+    }
+
+    .mini-bow::before { left: 0; transform: rotate(-8deg); }
+    .mini-bow::after { right: 0; transform: scaleX(-1) rotate(-8deg); }
+
+    .mini-bow i {
+      position: absolute;
+      left: 50%;
+      top: 13px;
+      width: 22px;
+      height: 22px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: inset 0 0 0 4px rgba(213,168,78,.4);
+      z-index: 3;
+    }
+
+    .mini-bow.top { top: 38px; right: 36px; transform: rotate(14deg); }
+    .mini-bow.bottom { bottom: 38px; left: 30px; transform: rotate(-12deg); }
+
+    .section {
+      margin-top: clamp(28px, 5vw, 48px);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .section-title span {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.62);
+      border: 1px solid rgba(213,168,78,.42);
+      color: var(--muted);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: .9rem;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .time-box {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 20px 8px 18px;
+      min-height: 128px;
+      border-radius: 26px;
+      background: linear-gradient(145deg, rgba(255,255,255,.88), rgba(255,238,229,.72));
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: 0 18px 34px rgba(126, 55, 76, .11);
+    }
+
+    .time-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,.75), transparent);
+      transform: translateX(-100%);
+      animation: shine 4s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0%, 45% { transform: translateX(-100%); }
+      75%, 100% { transform: translateX(100%); }
+    }
+
+    .time-box strong {
+      position: relative;
+      display: block;
+      color: var(--coral);
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      line-height: 1;
+      font-family: Georgia, serif;
+      text-shadow: 0 5px 0 rgba(255,255,255,.7);
+    }
+
+    .time-box span {
+      position: relative;
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .82rem;
+    }
+
+    .event-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .detail-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      background: rgba(255,255,255,.68);
+      border: 1px solid rgba(255,255,255,.82);
+      box-shadow: 0 18px 42px rgba(126, 55, 76, .1);
+      padding: 18px;
+      min-height: 145px;
+    }
+
+    .detail-card::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      right: -38px;
+      top: -38px;
+      background: rgba(255,143,171,.16);
+    }
+
+    .detail-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--pink), var(--coral));
+      color: #fff;
+      font-size: 1.35rem;
+      box-shadow: 0 12px 22px rgba(255,111,97,.2);
+      margin-bottom: 12px;
+    }
+
+    .detail-card h3 {
+      font-size: 1.1rem;
+      color: var(--coral);
+      margin-bottom: 8px;
+    }
+
+    .detail-card p {
+      color: var(--text);
+      line-height: 1.45;
+      font-size: .98rem;
+    }
+
+    .map-button-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 18px;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .info, .form-card {
+      border-radius: 30px;
+      background: rgba(255,255,255,.66);
+      border: 1px solid rgba(255,255,255,.8);
+      box-shadow: 0 18px 44px rgba(126, 55, 76, .1);
+      padding: clamp(18px, 3vw, 28px);
+    }
+
+    .info h2, .form-card h2 {
+      color: var(--coral);
+      font-family: Georgia, serif;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 12px;
+      font-size: 1.03rem;
+    }
+
+    .deadline {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255, 200, 162, .34), rgba(255, 231, 166, .32));
+      border: 1px solid rgba(213,168,78,.36);
+      font-weight: 900;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      color: var(--muted);
+      border: 1px solid rgba(213,168,78,.35);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    label {
+      color: var(--muted);
+      font-weight: 900;
+      font-size: .92rem;
+      margin-bottom: -5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(213,168,78,.42);
+      background: rgba(255,255,255,.85);
+      border-radius: 18px;
+      padding: 14px 14px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: .2s ease;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
+    }
+
+    textarea {
+      min-height: 82px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(255,143,171,.18);
+      transform: translateY(-1px);
+    }
+
+    .radio-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .radio-card {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(213,168,78,.36);
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--text);
+      transition: .2s ease;
+    }
+
+    .radio-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 143, 171, .7);
+    }
+
+    .radio-card input {
+      width: auto;
+      accent-color: var(--pink);
+    }
+
+    .btn {
+      cursor: pointer;
+      border: 0;
+      border-radius: 999px;
+      padding: 15px 20px;
+      font: inherit;
+      font-weight: 900;
+      letter-spacing: .03em;
+      color: white;
+      background: linear-gradient(135deg, var(--coral), var(--pink), var(--lilac));
+      box-shadow: 0 18px 30px rgba(255, 111, 97, .25);
+      transition: .2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 38px rgba(255, 111, 97, .3);
+    }
+
+    .btn.secondary {
+      color: var(--muted);
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(213,168,78,.4);
+      box-shadow: 0 12px 24px rgba(126, 55, 76, .08);
+    }
+
+    .btn.map {
+      background: linear-gradient(135deg, #ff6f61, #ff8fab, #d5a84e);
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .form-status, .closed {
+      display: none;
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      line-height: 1.45;
+      font-weight: 900;
+    }
+
+    .form-status {
+      background: rgba(90, 156, 114, .12);
+      color: var(--success);
+      border: 1px solid rgba(90, 156, 114, .26);
+    }
+
+    .closed {
+      background: rgba(255,111,97,.12);
+      color: var(--coral);
+      border: 1px solid rgba(255,111,97,.24);
+      text-align: center;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: .88rem;
+      text-align: center;
+      line-height: 1.45;
+    }
+
+    .bottom {
+      margin-top: 30px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .bottom h3 {
+      font-family: Georgia, serif;
+      color: var(--gold);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+    }
+
+    .share-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    @media (max-width: 920px) {
+      .event-details {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+      }
+
+      .invitation {
+        border-radius: 28px;
+        padding: 24px 16px 30px;
+      }
+
+      .invitation::before {
+        inset: 8px;
+        border-radius: 22px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .visual-card {
+        min-height: 340px;
+      }
+
+      .visual-card::before {
+        width: 250px;
+        height: 250px;
+      }
+
+      .visual-card::after {
+        width: 210px;
+        height: 210px;
+      }
+
+      .portrait-symbol {
+        width: 205px;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .event-details {
+        grid-template-columns: 1fr;
+      }
+
+      .date-pill {
+        width: 100%;
+      }
+
+      .radio-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff0f5;
+      }
+
+      body::before, .floating, .share-row, .btn.secondary {
+        display: none !important;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .invitation {
+        box-shadow: none;
+      }
+    }
+
+    /* Pantalla inicial tipo carta */
+    body.closed-invite {
+      overflow: hidden;
+    }
+
+    body.closed-invite .page {
+      opacity: 0;
+      transform: scale(0.96);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    body.opened-invite .page {
+      animation: revealPage .9s ease forwards;
+    }
+
+    @keyframes revealPage {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+        filter: blur(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    .intro-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,255,255,.96), transparent 22%),
+        radial-gradient(circle at 15% 85%, rgba(255, 231, 166, .35), transparent 22%),
+        linear-gradient(135deg, #fff0f5 0%, #ffd6c9 38%, #ffc4d6 72%, #f6d7ff 100%);
+      transition: opacity .7s ease, visibility .7s ease;
+    }
+
+    .intro-screen.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-box {
+      position: relative;
+      width: min(430px, 92vw);
+      min-height: 560px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      perspective: 1300px;
+    }
+
+    .letter-card {
+      position: relative;
+      width: 100%;
+      min-height: 520px;
+      border-radius: 34px;
+      padding: 32px 24px;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,241,.72));
+      box-shadow: 0 30px 85px rgba(126,55,76,.25);
+      border: 1px solid rgba(255,255,255,.82);
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+
+    .letter-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px dashed rgba(213,168,78,.62);
+      border-radius: 25px;
+      pointer-events: none;
+    }
+
+    .letter-card::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(255,143,171,.18);
+      top: -120px;
+      right: -120px;
+    }
+
+    .envelope {
+      position: relative;
+      width: min(315px, 78vw);
+      height: 210px;
+      margin: 18px auto 26px;
+      filter: drop-shadow(0 18px 22px rgba(126,55,76,.18));
+      animation: envelopeFloat 2.6s ease-in-out infinite;
+    }
+
+    @keyframes envelopeFloat {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+
+    .env-back {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #fff7f1, #ffd2c4);
+      border: 2px solid rgba(213,168,78,.42);
+      overflow: hidden;
+    }
+
+    .env-back::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(32deg, transparent 49%, rgba(213,168,78,.45) 50%, transparent 51%),
+        linear-gradient(-32deg, transparent 49%, rgba(213,168,78,.45) 50%, transparent 51%);
+    }
+
+    .env-flap {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 118px;
+      transform-origin: top center;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      background: linear-gradient(180deg, #ffb3c6, #ff8fab);
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      transition: transform .85s ease;
+      z-index: 3;
+    }
+
+    .intro-screen.opening .env-flap {
+      transform: rotateX(168deg);
+    }
+
+    .seal {
+      position: absolute;
+      left: 50%;
+      top: 80px;
+      transform: translateX(-50%);
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle, #fff8df 0 35%, #f0c66e 36% 64%, #d5a84e 65% 100%);
+      color: #d45d7a;
+      font-size: 1.55rem;
+      z-index: 5;
+      box-shadow: 0 8px 18px rgba(126,55,76,.2), inset 0 0 0 5px rgba(255,255,255,.38);
+    }
+
+    .env-letter {
+      position: absolute;
+      left: 50%;
+      bottom: 25px;
+      width: 82%;
+      height: 150px;
+      transform: translateX(-50%);
+      border-radius: 18px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(213,168,78,.4);
+      box-shadow: 0 12px 25px rgba(126,55,76,.12);
+      z-index: 2;
+      transition: transform .85s ease;
+      padding-top: 20px;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    .intro-screen.opening .env-letter {
+      transform: translateX(-50%) translateY(-82px);
+    }
+
+    .intro-title {
+      position: relative;
+      z-index: 2;
+      font-family: Georgia, serif;
+      color: var(--gold);
+      font-size: clamp(2rem, 8vw, 3.2rem);
+      line-height: .95;
+      margin-bottom: 8px;
+      text-shadow: 0 5px 0 rgba(255,255,255,.65);
+    }
+
+    .intro-name {
+      position: relative;
+      z-index: 2;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: clamp(2.25rem, 9vw, 4.1rem);
+      color: #d45d7a;
+      line-height: .9;
+      margin-bottom: 14px;
+    }
+
+    .intro-text {
+      position: relative;
+      z-index: 2;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0 auto 18px;
+      max-width: 330px;
+      font-weight: 700;
+    }
+
+    .tap-button {
+      position: relative;
+      z-index: 2;
+      border: 0;
+      cursor: pointer;
+      padding: 16px 26px;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(135deg, var(--coral), var(--pink), var(--lilac));
+      font: inherit;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: 0 18px 30px rgba(255,111,97,.28);
+      animation: pulseTap 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseTap {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .intro-note {
+      position: relative;
+      z-index: 2;
+      color: var(--muted);
+      opacity: .8;
+      margin-top: 12px;
+      font-size: .9rem;
+    }
+
+    .music-control {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 40;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.82);
+      background: rgba(255,255,255,.78);
+      color: var(--coral);
+      box-shadow: 0 14px 28px rgba(126,55,76,.16);
+      cursor: pointer;
+      display: none;
+      place-items: center;
+      font-size: 1.35rem;
+      backdrop-filter: blur(12px);
+    }
+
+    body.opened-invite .music-control {
+      display: grid;
+    }
+
+    .music-control.muted {
+      color: var(--muted);
+      opacity: .8;
+    }
+
+    @media (max-width: 520px) {
+      .intro-box {
+        min-height: 540px;
+      }
+
+      .letter-card {
+        min-height: 500px;
+        padding: 24px 16px;
+      }
+
+      .envelope {
+        height: 190px;
+      }
+    }
+
+  </style>
+</head>
+
+<body class="closed-invite">
+  <div class="intro-screen" id="introScreen">
+    <div class="intro-box">
+      <div class="letter-card">
+        <div class="intro-title">Mis XV Años</div>
+        <div class="intro-name">Yanina Beatriz</div>
+
+        <div class="envelope" aria-hidden="true">
+          <div class="env-back"></div>
+          <div class="env-letter">Una invitación especial 💌</div>
+          <div class="env-flap"></div>
+          <div class="seal">♥</div>
+        </div>
+
+        <p class="intro-text">
+          Hay momentos que se guardan para siempre. Tocá la carta para abrir la invitación.
+        </p>
+
+        <button class="tap-button" id="openInvitation" type="button">Tocar</button>
+        <div class="intro-note">La música empieza al abrir la carta 🎵</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="music-control" id="musicControl" type="button" title="Activar o pausar música">🎵</button>
+  <audio id="bgMusic" loop preload="auto">
+    <source src="tiempo_de_vals.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div class="floating" aria-hidden="true">
+    <span>💖</span>
+    <span>✨</span>
+    <span>🎀</span>
+    <span>🌸</span>
+    <span>💫</span>
+    <span>🦋</span>
+    <span>💕</span>
+  </div>
+
+  <main class="page">
+    <section class="invitation">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="blob three"></div>
+
+      <div class="hero">
+        <div class="hero-text">
+          <div class="tag"><span>✦</span> Invitación digital <span>✦</span></div>
+
+          <h1 class="title">
+            <small>Mis</small>
+            <strong>XV</strong>
+          </h1>
+
+          <div class="name">Yanina Beatriz<br>Barrios Medina</div>
+
+          <p class="intro">
+            Te invito a celebrar conmigo una noche mágica, alegre y llena de recuerdos hermosos.
+          </p>
+
+          <div class="date-pill">
+            <div class="icon">📅</div>
+            <div>
+              <div>Sábado</div>
+              <strong>4 de julio de 2026 - 21:00 hs</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-card" aria-label="Decoración principal de XV años">
+          <span class="mini-bow top"><i></i></span>
+          <span class="mini-bow bottom"><i></i></span>
+
+          <div class="portrait-symbol">
+            <div class="crown">👑</div>
+            <div>
+              <div class="big">15</div>
+              <div class="label">años</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="section-title"><span>⏳ Cuenta regresiva</span></div>
+
+        <div class="countdown" aria-label="Cronómetro regresivo">
+          <div class="time-box"><strong id="days">00</strong><span>Días</span></div>
+          <div class="time-box"><strong id="hours">00</strong><span>Horas</span></div>
+          <div class="time-box"><strong id="minutes">00</strong><span>Minutos</span></div>
+          <div class="time-box"><strong id="seconds">00</strong><span>Segundos</span></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title"><span>🎀 Detalles de la noche</span></div>
+
+        <div class="event-details">
+          <div class="detail-card">
+            <div class="detail-icon">📍</div>
+            <h3>Lugar</h3>
+            <p>La celebración será en <strong>Lelos</strong>.</p>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon">🕘</div>
+            <h3>Hora</h3>
+            <p>Te esperamos desde las <strong>21:00 hs</strong>.</p>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon">👗</div>
+            <h3>Vestimenta</h3>
+            <p>La vestimenta será <strong>sport elegante</strong>.</p>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon">🎧</div>
+            <h3>Música</h3>
+            <p>Esa noche estará presente <strong>DJ Paya</strong> para animar la fiesta.</p>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon">🥂</div>
+            <h3>Bebidas</h3>
+            <p>Habrá <strong>Munich Ultra</strong>. También podés traer otra bebida si querés.</p>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon">🎁</div>
+            <h3>Regalos</h3>
+            <p>Puede ser cualquier regalo para la quinceañera. <strong>¡Que se luzcan!</strong></p>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon">💌</div>
+            <h3>Confirmación</h3>
+            <p>Confirmá tu asistencia completando el formulario hasta el <strong>30 de junio</strong>.</p>
+          </div>
+        </div>
+
+        <div class="map-button-wrap">
+          <a class="btn map" href="https://maps.app.goo.gl/W41SnSauUpf3v2FF9?g_st=ic" target="_blank" rel="noopener">
+            Ver ubicación en Google Maps 📍
+          </a>
+        </div>
+      </section>
+
+      <section class="section details">
+        <article class="info">
+          <h2>Confirmá tu asistencia</h2>
+          <p>
+            Para organizar mejor este día tan especial, completá el formulario indicando si vas a asistir.
+          </p>
+          <p>
+            Las respuestas llegan directamente al correo del organizador y quedan registradas.
+          </p>
+
+          <div class="deadline">
+            🎀 Avisar hasta el 30 de junio de 2026.
+          </div>
+
+          <div class="chips">
+            <span class="chip">🎉 Noche especial</span>
+            <span class="chip">🎧 DJ Paya</span>
+            <span class="chip">👗 Sport elegante</span>
+            <span class="chip">📍 Lelos</span>
+          </div>
+        </article>
+
+        <article class="form-card">
+          <h2>RSVP</h2>
+
+          <div id="closedMessage" class="closed">
+            El plazo para confirmar asistencia terminó el 30 de junio de 2026.
+          </div>
+
+          <form id="rsvpForm" action="https://formsubmit.co/osmarbl888@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Confirmación XV Años - Yanina Beatriz" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="" id="nextUrl" />
+            <input type="hidden" name="Evento" value="XV Años de Yanina Beatriz Barrios Medina - Sábado 4 de julio de 2026 - 21:00 hs" />
+            <input type="hidden" name="Lugar" value="Lelos" />
+            <input type="hidden" name="Hora" value="21:00 hs" />
+            <input type="hidden" name="Vestimenta" value="Sport elegante" />
+            <input type="hidden" name="DJ" value="DJ Paya" />
+
+            <label for="nombre">Nombre y apellido</label>
+            <input id="nombre" name="Nombre y apellido" type="text" placeholder="Escribí tu nombre completo" required />
+
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="Teléfono" type="tel" placeholder="Ej: 0975 000 000" required />
+
+            <label>¿Asistirás?</label>
+            <div class="radio-row">
+              <label class="radio-card">
+                <input type="radio" name="Respuesta" value="Sí, asistiré" required />
+                Sí, asistiré 💖
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="Respuesta" value="No podré asistir" required />
+                No podré asistir
+              </label>
+            </div>
+
+            <label for="cantidad">Cantidad de personas</label>
+            <select id="cantidad" name="Cantidad de personas" required>
+              <option value="">Seleccionar</option>
+              <option value="1 persona">1 persona</option>
+              <option value="2 personas">2 personas</option>
+              <option value="3 personas">3 personas</option>
+              <option value="4 personas">4 personas</option>
+              <option value="5 personas o más">5 personas o más</option>
+            </select>
+
+            <label for="mensaje">Mensaje opcional</label>
+            <textarea id="mensaje" name="Mensaje" placeholder="Dejá un saludo o aclaración"></textarea>
+
+            <div class="actions">
+              <button class="btn" type="submit">Enviar confirmación ✨</button>
+              <a class="btn secondary" href="https://maps.app.goo.gl/W41SnSauUpf3v2FF9?g_st=ic" target="_blank" rel="noopener">Ver ubicación 📍</a>
+              <button class="btn secondary" type="button" id="whatsappBtn">Compartir por WhatsApp</button>
+            </div>
+
+            <div id="formStatus" class="form-status">
+              Preparando el envío de tu confirmación...
+            </div>
+
+            <p class="note">
+              La primera vez puede pedir confirmar el correo del organizador en FormSubmit.
+            </p>
+          </form>
+        </article>
+      </section>
+
+      <div class="bottom">
+        <h3>¡Te espero para celebrar conmigo!</h3>
+        <p>Con cariño, familia de Yanina Beatriz 💕</p>
+
+        <div class="share-row">
+          <a class="btn secondary" href="#rsvpForm">Confirmar asistencia</a>
+          <a class="btn secondary" href="https://maps.app.goo.gl/W41SnSauUpf3v2FF9?g_st=ic" target="_blank" rel="noopener">Cómo llegar</a>
+          <button class="btn secondary" type="button" onclick="window.print()">Guardar como PDF</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const eventDate = new Date("2026-07-04T21:00:00-03:00");
+    const limitDate = new Date("2026-06-30T23:59:59-03:00");
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    const form = document.getElementById("rsvpForm");
+    const closedMessage = document.getElementById("closedMessage");
+    const formStatus = document.getElementById("formStatus");
+    const nextUrl = document.getElementById("nextUrl");
+    const whatsappBtn = document.getElementById("whatsappBtn");
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (60 * 60 * 24));
+      const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+      const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+      const seconds = totalSeconds % 60;
+
+      daysEl.textContent = pad(days);
+      hoursEl.textContent = pad(hours);
+      minutesEl.textContent = pad(minutes);
+      secondsEl.textContent = pad(seconds);
+    }
+
+    function checkDeadline() {
+      const now = new Date();
+
+      if (now > limitDate) {
+        form.style.display = "none";
+        closedMessage.style.display = "block";
+      } else {
+        form.style.display = "grid";
+        closedMessage.style.display = "none";
+      }
+    }
+
+    function setReturnUrl() {
+      if (location.href.startsWith("http")) {
+        nextUrl.value = location.href.split("#")[0] + "#gracias";
+      } else {
+        nextUrl.value = "";
+      }
+    }
+
+    form.addEventListener("submit", function () {
+      formStatus.style.display = "block";
+    });
+
+    whatsappBtn.addEventListener("click", function () {
+      const link = location.href.startsWith("http") ? location.href : "Abrí la invitación que te envié.";
+      const text = encodeURIComponent(
+        "💖 Invitación a mis XV años 💖\n\n" +
+        "Yanina Beatriz Barrios Medina\n" +
+        "📅 Sábado 4 de julio de 2026 - 21:00 hs\n" +
+        "📍 Lelos\n" +
+        "👗 Vestimenta: sport elegante\n" +
+        "🎧 DJ Paya\n\n" +
+        "Confirmá tu asistencia hasta el 30 de junio:\n" +
+        link + "\n\n" +
+        "Ubicación: https://maps.app.goo.gl/W41SnSauUpf3v2FF9?g_st=ic"
+      );
+
+      window.open("https://wa.me/?text=" + text, "_blank");
+    });
+
+    updateCountdown();
+    checkDeadline();
+    setReturnUrl();
+
+    setInterval(updateCountdown, 1000);
+    setInterval(checkDeadline, 60000);
+
+    if (location.hash === "#gracias") {
+      formStatus.textContent = "¡Gracias! Tu confirmación fue enviada correctamente.";
+      formStatus.style.display = "block";
+      formStatus.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    // Carta inicial + música de fondo desde archivo local
+    const introScreen = document.getElementById("introScreen");
+    const openInvitationBtn = document.getElementById("openInvitation");
+    const musicControl = document.getElementById("musicControl");
+    const bgMusic = document.getElementById("bgMusic");
+
+    let musicPlaying = false;
+
+    async function startMusic() {
+      try {
+        bgMusic.volume = 0.55;
+        await bgMusic.play();
+        musicPlaying = true;
+        musicControl.textContent = "🎵";
+        musicControl.classList.remove("muted");
+      } catch (error) {
+        musicPlaying = false;
+        musicControl.textContent = "🔇";
+        musicControl.classList.add("muted");
+        console.log("Para que suene la música, agregá el archivo tiempo_de_vals.mp3 junto al index.html.");
+      }
+    }
+
+    function pauseMusic() {
+      bgMusic.pause();
+      musicPlaying = false;
+      musicControl.textContent = "🔇";
+      musicControl.classList.add("muted");
+    }
+
+    function resumeMusic() {
+      startMusic();
+    }
+
+    function openInvitation() {
+      introScreen.classList.add("opening");
+
+      setTimeout(() => {
+        document.body.classList.remove("closed-invite");
+        document.body.classList.add("opened-invite");
+        introScreen.classList.add("hide");
+      }, 850);
+
+      startMusic();
+    }
+
+    openInvitationBtn.addEventListener("click", openInvitation);
+
+    musicControl.addEventListener("click", function () {
+      if (musicPlaying) {
+        pauseMusic();
+      } else {
+        resumeMusic();
+      }
+    });
+
+  </script>
+</body>
+</html>
