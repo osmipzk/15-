@@ -979,138 +979,6 @@
       transform: rotateX(168deg);
     }
 
-
-    .letter-bow {
-      position: absolute;
-      top: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 360px;
-      height: 210px;
-      z-index: 8;
-      filter: drop-shadow(0 24px 34px rgba(126,55,76,.28));
-      pointer-events: none;
-    }
-
-    .letter-bow::before,
-    .letter-bow::after {
-      content: "";
-      position: absolute;
-      top: 28px;
-      width: 152px;
-      height: 112px;
-      background:
-        radial-gradient(circle at 28% 28%, rgba(255,255,255,.85) 0 10%, rgba(255,255,255,.28) 11%, transparent 36%),
-        linear-gradient(145deg, #ffd9e2 0%, #ffb0c4 22%, #f06d8f 60%, #d95777 100%);
-      border-radius: 76% 26% 78% 24% / 70% 28% 72% 30%;
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,.42),
-        inset -18px -18px 28px rgba(255,255,255,.16),
-        inset 18px 12px 22px rgba(255,255,255,.12),
-        0 12px 20px rgba(126,55,76,.16);
-    }
-
-    .letter-bow::before {
-      left: 12px;
-      transform: rotate(-16deg) skewY(-4deg);
-    }
-
-    .letter-bow::after {
-      right: 12px;
-      transform: scaleX(-1) rotate(-16deg) skewY(-4deg);
-    }
-
-    .letter-bow-center {
-      position: absolute;
-      left: 50%;
-      top: 56px;
-      width: 70px;
-      height: 58px;
-      transform: translateX(-50%);
-      border-radius: 18px;
-      background:
-        linear-gradient(145deg, #ffcad7 0%, #ff9ab2 35%, #ef6d8d 68%, #d95777 100%);
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,.36),
-        inset 0 14px 14px rgba(255,255,255,.18),
-        0 8px 14px rgba(0,0,0,.10);
-      z-index: 4;
-      overflow: hidden;
-    }
-
-    .letter-bow-center::before {
-      content: "";
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      top: 7px;
-      height: 16px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,0));
-      opacity: .8;
-    }
-
-    .letter-bow-tail-left,
-    .letter-bow-tail-right {
-      position: absolute;
-      top: 94px;
-      width: 58px;
-      height: 150px;
-      background:
-        linear-gradient(180deg, #ffd9e2 0%, #ffacbf 30%, #ef6d8d 70%, #d95777 100%);
-      clip-path: polygon(10% 0, 100% 0, 84% 100%, 50% 82%, 18% 100%, 0 12%);
-      opacity: .99;
-      z-index: 2;
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,.18),
-        inset 10px 10px 14px rgba(255,255,255,.12),
-        0 10px 14px rgba(126,55,76,.12);
-    }
-
-    .letter-bow-tail-left::before,
-    .letter-bow-tail-right::before {
-      content: "";
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      top: 10px;
-      height: 26px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(255,255,255,.62), rgba(255,255,255,0));
-      opacity: .72;
-    }
-
-    .letter-bow-tail-left::after,
-    .letter-bow-tail-right::after {
-      content: "";
-      position: absolute;
-      top: 22px;
-      width: 18px;
-      height: 18px;
-      background: rgba(173, 65, 92, .28);
-      filter: blur(3px);
-    }
-
-    .letter-bow-tail-left {
-      left: 90px;
-      transform: rotate(10deg);
-    }
-
-    .letter-bow-tail-left::after {
-      left: 2px;
-      clip-path: polygon(0 0, 100% 50%, 0 100%);
-    }
-
-    .letter-bow-tail-right {
-      right: 90px;
-      transform: rotate(-10deg);
-    }
-
-    .letter-bow-tail-right::after {
-      right: 2px;
-      clip-path: polygon(100% 0, 0 50%, 100% 100%);
-    }
-
     .seal {
       position: absolute;
       left: 50%;
@@ -1270,41 +1138,7 @@
         width: min(320px, 84vw);
         height: 210px;
       }
-
-      .letter-bow {
-        width: 255px;
-        height: 150px;
-        top: 18px;
-      }
-
-      .letter-bow::before,
-      .letter-bow::after {
-        width: 108px;
-        height: 82px;
-        top: 20px;
-      }
-
-      .letter-bow-center {
-        width: 52px;
-        height: 46px;
-        top: 44px;
-      }
-
-      .letter-bow-tail-left,
-      .letter-bow-tail-right {
-        width: 42px;
-        height: 112px;
-        top: 72px;
-      }
-
-      .letter-bow-tail-left {
-        left: 58px;
-      }
-
-      .letter-bow-tail-right {
-        right: 58px;
-      }
-    }
+}
 
   </style>
 </head>
@@ -1317,15 +1151,10 @@
         <div class="intro-name">Yanina Beatriz</div>
 
         <div class="envelope" aria-hidden="true">
-          <div class="letter-bow">
-            <div class="letter-bow-center"></div>
-            <div class="letter-bow-tail-left"></div>
-            <div class="letter-bow-tail-right"></div>
-          </div>
           <div class="env-back"></div>
           <div class="env-letter">
             <div style="font-family: Georgia, serif; color: var(--gold); font-size: 1.15rem; margin-bottom: 8px;">Invitación especial</div>
-            <div style="font-family: 'Brush Script MT', 'Segoe Script', cursive; color: #d45d7a; font-size: 1.8rem; line-height: .95;">Yanina Beatriz</div>
+            <div style="font-family: 'Brush Script MT', 'Segoe Script', cursive; color: #d45d7a; font-size: 1.8rem; line-height: .95;"></div>
             <div style="margin-top: 10px; font-size: .9rem;">Tocá para abrir ✨</div>
           </div>
           <div class="env-flap"></div>
@@ -1337,7 +1166,7 @@
         </p>
 
         <button class="tap-button" id="openInvitation" type="button">Tocar</button>
-           </div>
+      </div>
     </div>
   </div>
 
@@ -1443,7 +1272,10 @@
           <div class="detail-card">
             <div class="detail-icon">🥂</div>
             <h3>Bebidas</h3>
-            <p>Habrá <strong>Munich Ultra</strong>. También podés traer otra bebida si querés.</p>
+           <p>
+          Durante la noche habrá <strong>cerveza Munich Ultra</strong>. 
+          En caso de que prefieras otra bebida, podés traer la de tu preferencia.
+          </p>
           </div>
 
           <div class="detail-card">
@@ -1535,7 +1367,7 @@
               <option value="5 personas o más">5 personas o más</option>
             </select>
 
-            <label for="mensaje">Mensaje opcional</label>
+            <label for="mensaje">Nombre de los que asistirán</label>
             <textarea id="mensaje" name="Mensaje" placeholder="Dejá un saludo o aclaración"></textarea>
 
             <div class="actions">
@@ -1548,7 +1380,7 @@
               Preparando el envío de tu confirmación...
             </div>
 
-
+            
           </form>
         </article>
       </section>
