@@ -982,13 +982,13 @@
 
     .letter-bow {
       position: absolute;
-      top: 36px;
+      top: 4px;
       left: 50%;
       transform: translateX(-50%);
-      width: 220px;
-      height: 128px;
+      width: 360px;
+      height: 210px;
       z-index: 8;
-      filter: drop-shadow(0 18px 24px rgba(126,55,76,.22));
+      filter: drop-shadow(0 24px 34px rgba(126,55,76,.28));
       pointer-events: none;
     }
 
@@ -996,62 +996,119 @@
     .letter-bow::after {
       content: "";
       position: absolute;
-      top: 20px;
-      width: 96px;
-      height: 66px;
-      background: linear-gradient(135deg, #ffc2d1, #ff8fab 55%, #ff6f61);
-      border-radius: 72% 24% 72% 24%;
+      top: 28px;
+      width: 152px;
+      height: 112px;
+      background:
+        radial-gradient(circle at 28% 28%, rgba(255,255,255,.85) 0 10%, rgba(255,255,255,.28) 11%, transparent 36%),
+        linear-gradient(145deg, #ffd9e2 0%, #ffb0c4 22%, #f06d8f 60%, #d95777 100%);
+      border-radius: 76% 26% 78% 24% / 70% 28% 72% 30%;
       box-shadow:
         inset 0 0 0 1px rgba(255,255,255,.42),
-        inset -10px -10px 18px rgba(255,255,255,.18);
+        inset -18px -18px 28px rgba(255,255,255,.16),
+        inset 18px 12px 22px rgba(255,255,255,.12),
+        0 12px 20px rgba(126,55,76,.16);
     }
 
     .letter-bow::before {
-      left: 6px;
-      transform: rotate(-12deg);
+      left: 12px;
+      transform: rotate(-16deg) skewY(-4deg);
     }
 
     .letter-bow::after {
-      right: 6px;
-      transform: scaleX(-1) rotate(-12deg);
+      right: 12px;
+      transform: scaleX(-1) rotate(-16deg) skewY(-4deg);
     }
 
     .letter-bow-center {
       position: absolute;
       left: 50%;
-      top: 34px;
-      width: 42px;
-      height: 42px;
+      top: 56px;
+      width: 70px;
+      height: 58px;
       transform: translateX(-50%);
-      border-radius: 50%;
-      background: radial-gradient(circle, #fff8df 0 34%, #f0c66e 35% 63%, #d5a84e 64% 100%);
+      border-radius: 18px;
+      background:
+        linear-gradient(145deg, #ffcad7 0%, #ff9ab2 35%, #ef6d8d 68%, #d95777 100%);
       box-shadow:
-        inset 0 0 0 5px rgba(255,255,255,.38),
-        0 5px 10px rgba(0,0,0,.08);
-      z-index: 3;
+        inset 0 0 0 1px rgba(255,255,255,.36),
+        inset 0 14px 14px rgba(255,255,255,.18),
+        0 8px 14px rgba(0,0,0,.10);
+      z-index: 4;
+      overflow: hidden;
+    }
+
+    .letter-bow-center::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 7px;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,0));
+      opacity: .8;
     }
 
     .letter-bow-tail-left,
     .letter-bow-tail-right {
       position: absolute;
-      top: 56px;
-      width: 36px;
-      height: 92px;
-      background: linear-gradient(180deg, #ffc2d1, #ff8fab 55%, #ff6f61);
-      clip-path: polygon(0 0, 100% 0, 84% 100%, 50% 82%, 18% 100%);
-      opacity: .98;
+      top: 94px;
+      width: 58px;
+      height: 150px;
+      background:
+        linear-gradient(180deg, #ffd9e2 0%, #ffacbf 30%, #ef6d8d 70%, #d95777 100%);
+      clip-path: polygon(10% 0, 100% 0, 84% 100%, 50% 82%, 18% 100%, 0 12%);
+      opacity: .99;
       z-index: 2;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.22);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.18),
+        inset 10px 10px 14px rgba(255,255,255,.12),
+        0 10px 14px rgba(126,55,76,.12);
+    }
+
+    .letter-bow-tail-left::before,
+    .letter-bow-tail-right::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 10px;
+      height: 26px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,.62), rgba(255,255,255,0));
+      opacity: .72;
+    }
+
+    .letter-bow-tail-left::after,
+    .letter-bow-tail-right::after {
+      content: "";
+      position: absolute;
+      top: 22px;
+      width: 18px;
+      height: 18px;
+      background: rgba(173, 65, 92, .28);
+      filter: blur(3px);
     }
 
     .letter-bow-tail-left {
-      left: 60px;
-      transform: rotate(12deg);
+      left: 90px;
+      transform: rotate(10deg);
+    }
+
+    .letter-bow-tail-left::after {
+      left: 2px;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
     }
 
     .letter-bow-tail-right {
-      right: 60px;
-      transform: rotate(-12deg);
+      right: 90px;
+      transform: rotate(-10deg);
+    }
+
+    .letter-bow-tail-right::after {
+      right: 2px;
+      clip-path: polygon(100% 0, 0 50%, 100% 100%);
     }
 
     .seal {
@@ -1215,26 +1272,37 @@
       }
 
       .letter-bow {
-        width: 178px;
-        height: 108px;
-        top: 42px;
+        width: 255px;
+        height: 150px;
+        top: 18px;
       }
 
       .letter-bow::before,
       .letter-bow::after {
-        width: 78px;
-        height: 56px;
+        width: 108px;
+        height: 82px;
+        top: 20px;
       }
 
       .letter-bow-center {
-        width: 36px;
-        height: 36px;
+        width: 52px;
+        height: 46px;
+        top: 44px;
       }
 
       .letter-bow-tail-left,
       .letter-bow-tail-right {
-        height: 80px;
-        top: 50px;
+        width: 42px;
+        height: 112px;
+        top: 72px;
+      }
+
+      .letter-bow-tail-left {
+        left: 58px;
+      }
+
+      .letter-bow-tail-right {
+        right: 58px;
       }
     }
 
@@ -1269,7 +1337,7 @@
         </p>
 
         <button class="tap-button" id="openInvitation" type="button">Tocar</button>
-      </div>
+           </div>
     </div>
   </div>
 
@@ -1479,6 +1547,8 @@
             <div id="formStatus" class="form-status">
               Preparando el envío de tu confirmación...
             </div>
+
+
           </form>
         </article>
       </section>
@@ -1651,4 +1721,3 @@
   </script>
 </body>
 </html>
-
